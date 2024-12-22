@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Pogula's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1e;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            animation: fadeIn 2s ease-in-out;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            animation: slideInDown 1.5s ease-in-out;
+        }
+        header p {
+            margin: 15px 0 0;
+            font-size: 1.5em;
+            animation: slideInUp 1.5s ease-in-out;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+            background-color: #3a1c71;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffaf7b;
+            transform: scale(1.1);
+        }
+        section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #2c2c2e;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+        section:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+        .section-title {
+            text-align: center;
+            color: #ffaf7b;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ffaf7b;
+            display: inline-block;
+        }
+        .projects, .experience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project-item, .experience-item {
+            background-color: #3a1c71;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-item:hover, .experience-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            transition: background-color 0.3s ease;
+        }
+        ul li:hover {
+            background-color: #3a1c71;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #3a1c71;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #ffaf7b;
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(90deg, #3a1c71, #d76d77);
+            color: #fff;
+            margin-top: 50px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        footer a {
+            color: #ffaf7b;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rahul Pogula</h1>
+        <p>Data Scientist | Machine Learning Enthusiast | Aspiring Innovator</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2 class="section-title">About</h2>
+        <p>I am a passionate data scientist currently pursuing my Master’s in Data Science at the University of North Texas. My expertise lies in machine learning, data analysis, and building innovative solutions to complex problems. With hands-on experience in real-world projects and a solid foundation in computer science, I am driven to make data-driven decisions impactful.</p>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <ul>
+            <li><strong>University of North Texas, Denton, TX</strong><br>Master’s of Science in Data Science (Expected Dec 2026)<br>Relevant Coursework: Applied Machine Learning, Principles and Techniques of Data Science</li>
+            <li><strong>Malla Reddy Engineering College, Hyderabad, India</strong><br>Bachelor’s in Computer Science Engineering - Data Science (Aug 2020 - May 2024)<br>GPA: 8.1/10</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+            <div class="project-item">
+                <h3>Optimized Ensemble Technique for Cervical Cancer Prediction</h3>
+                <p>Developed an optimized ensemble model using SMOTE to address class imbalance and Recursive Feature Elimination with Random Forest (RFERF) for feature selection, achieving a high accuracy of 92% and precision of 90%. Applied comprehensive data pre-processing techniques, achieving strong metrics such as 88% recall and an F1-score of 89%.</p>
+            </div>
+            <div class="project-item">
+                <h3>Predicting Movie Success Rates</h3>
+                <p>Designed a movie success rate prediction model using Scikit-learn and TensorFlow by implementing machine learning algorithms such as Random Forest, Gradient Boosting, and Neural Networks. Conducted cross-validation and hyperparameter tuning to improve model accuracy and provided insights into key factors for movie success.</p>
+            </div>
+            <div class="project-item">
+                <h3>Data-Driven Weather Analysis and Intelligent Home Automation</h3>
+                <p>Implemented a real-time weather analysis system using Arduino Uno sensors for data collection. Leveraged cloud-based data transmission and advanced analysis techniques to drive intelligent home automation, optimizing environments based on weather conditions.</p>
+            </div>
+            <div class="project-item">
+                <h3>Machine Translation Using Transformers</h3>
+                <p>Designed a machine translation system using the Transformer architecture to overcome limitations of conventional seq2seq models. Utilized transfer learning with pre-trained Transformer models, achieving high BLEU scores and enabling accurate contextual translation across multiple languages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience">
+            <div class="experience-item">
+                <h3>Student Assistant | University of North Texas, Denton, Texas</h3>
+                <p>Supported university staff in administrative and technical tasks, enhancing operational efficiency and contributing to student-focused projects.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Data Science Intern | NILTECH-EDU, Hyderabad, India</h3>
+                <p>Developed and optimized machine learning models through data preprocessing, exploratory data analysis (EDA), and feature engineering. Collaborated on cross-functional teams to interpret findings and communicated insights using data visualization tools.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <ul>
+            <li>Programming: Python, SQL, PHP, JavaScript, HTML/CSS</li>
+            <li>Frameworks & Tools: TensorFlow, Scikit-learn, Hadoop, Spark</li>
+            <li>Data Analysis: Pandas, NumPy, Matplotlib, Seaborn</li>
+            <li>Cloud: Microsoft Azure</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>Email: <a href="mailto:RahulPogula@my.unt.edu">RahulPogula@my.unt.edu</a></p>
+        <p>Phone: +1 9405953243</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/rahul-pogula-b9b558246">linkedin.com/in/rahul-pogula-b9b558246</a></p>
+        <button onclick="window.location.href='mailto:RahulPogula@my.unt.edu'">Contact Me</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rahul Pogula. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
