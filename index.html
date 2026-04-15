@@ -3,263 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Pogula's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Rahul Pogula | AI Research & Data Science</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1c1c1e;
-            color: #fff;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e7eb;
             overflow-x: hidden;
         }
-        header {
-            background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            animation: fadeIn 2s ease-in-out;
+
+        /* Futuristic Animated Background */
+        .bg-mesh {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0a 100%);
         }
-        header h1 {
-            margin: 0;
-            font-size: 3.5em;
-            animation: slideInDown 1.5s ease-in-out;
+        .blob {
+            position: absolute;
+            width: 500px; height: 500px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: move 20s infinite alternate;
         }
-        header p {
-            margin: 15px 0 0;
-            font-size: 1.5em;
-            animation: slideInUp 1.5s ease-in-out;
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
         }
-        nav {
-            text-align: center;
-            margin: 20px 0;
-            background-color: #3a1c71;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1.5s ease-in-out;
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            margin: 0 20px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: color 0.3s ease, transform 0.3s ease;
+
+        .text-gradient {
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        nav a:hover {
-            color: #ffaf7b;
-            transform: scale(1.1);
-        }
-        section {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 40px;
-            background-color: #2c2c2e;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s forwards;
-        }
-        section:nth-child(even) {
-            animation-delay: 0.3s;
-        }
-        .section-title {
-            text-align: center;
-            color: #ffaf7b;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #ffaf7b;
-            display: inline-block;
-        }
-        .projects, .experience {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .project-item, .experience-item {
-            background-color: #3a1c71;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-item:hover, .experience-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 10px;
-            border-bottom: 1px solid #444;
-            transition: background-color 0.3s ease;
-        }
-        ul li:hover {
-            background-color: #3a1c71;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: #fff;
-            background-color: #3a1c71;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        button:hover {
-            background-color: #ffaf7b;
-            transform: scale(1.1);
-        }
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(90deg, #3a1c71, #d76d77);
-            color: #fff;
-            margin-top: 50px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        footer a {
-            color: #ffaf7b;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-        footer a:hover {
-            color: #fff;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes slideInDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        @keyframes slideInUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+
+        .nav-link:hover { color: #818cf8; transition: 0.3s; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Rahul Pogula</h1>
-        <p>Data Scientist | Machine Learning Enthusiast | Aspiring Innovator</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+
+    <div class="bg-mesh">
+        <div class="blob" style="top: -10%; left: -10%;"></div>
+        <div class="blob" style="bottom: -10%; right: -10%; animation-delay: -5s;"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center">
+        <div class="text-xl font-extrabold tracking-tighter text-gradient">RP.</div>
+        <div class="hidden md:flex space-x-8 font-medium text-sm">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="mailto:rahul.pogula2002@gmail.com" class="bg-indigo-600 px-4 py-2 rounded-full text-white hover:bg-indigo-500 transition">Contact Me</a>
+        </div>
     </nav>
 
-    <section id="about">
-        <h2 class="section-title">About</h2>
-        <p>I am a passionate data scientist currently pursuing my Master’s in Data Science at the University of North Texas. My expertise lies in machine learning, data analysis, and building innovative solutions to complex problems. With hands-on experience in real-world projects and a solid foundation in computer science, I am driven to make data-driven decisions impactful.</p>
-    </section>
-
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <ul>
-            <li><strong>University of North Texas, Denton, TX</strong><br>Master’s of Science in Data Science (Expected Dec 2026)<br>Relevant Coursework: Applied Machine Learning, Principles and Techniques of Data Science</li>
-            <li><strong>Malla Reddy Engineering College, Hyderabad, India</strong><br>Bachelor’s in Computer Science Engineering - Data Science (Aug 2020 - May 2024)<br>GPA: 8.1/10</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects">
-            <div class="project-item">
-                <h3>Optimized Ensemble Technique for Cervical Cancer Prediction</h3>
-                <p>Developed an optimized ensemble model using SMOTE to address class imbalance and Recursive Feature Elimination with Random Forest (RFERF) for feature selection, achieving a high accuracy of 92% and precision of 90%. Applied comprehensive data pre-processing techniques, achieving strong metrics such as 88% recall and an F1-score of 89%.</p>
-            </div>
-            <div class="project-item">
-                <h3>Predicting Movie Success Rates</h3>
-                <p>Designed a movie success rate prediction model using Scikit-learn and TensorFlow by implementing machine learning algorithms such as Random Forest, Gradient Boosting, and Neural Networks. Conducted cross-validation and hyperparameter tuning to improve model accuracy and provided insights into key factors for movie success.</p>
-            </div>
-            <div class="project-item">
-                <h3>Data-Driven Weather Analysis and Intelligent Home Automation</h3>
-                <p>Implemented a real-time weather analysis system using Arduino Uno sensors for data collection. Leveraged cloud-based data transmission and advanced analysis techniques to drive intelligent home automation, optimizing environments based on weather conditions.</p>
-            </div>
-            <div class="project-item">
-                <h3>Machine Translation Using Transformers</h3>
-                <p>Designed a machine translation system using the Transformer architecture to overcome limitations of conventional seq2seq models. Utilized transfer learning with pre-trained Transformer models, achieving high BLEU scores and enabling accurate contextual translation across multiple languages.</p>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+        <div data-aos="zoom-out" data-aos-duration="1000">
+            <span class="px-3 py-1 text-xs font-semibold tracking-widest text-indigo-400 uppercase bg-indigo-400/10 rounded-full border border-indigo-400/20">Available for Opportunities</span>
+            <h1 class="text-6xl md:text-8xl font-extrabold mt-6 mb-4 tracking-tight">
+                Rahul <span class="text-gradient">Pogula</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                MS in Data Science Student specializing in <span class="text-white font-medium">Agentic AI</span>, 
+                Deep Learning, and scalable Machine Learning pipelines.
+            </p>
+            <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#projects" class="px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition duration-300">View Projects</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="px-8 py-4 glass text-white font-bold rounded-xl hover:bg-white/10 transition duration-300">LinkedIn</a>
             </div>
         </div>
     </section>
 
-    <section id="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience">
-            <div class="experience-item">
-                <h3>Student Assistant | University of North Texas, Denton, Texas</h3>
-                <p>Supported university staff in administrative and technical tasks, enhancing operational efficiency and contributing to student-focused projects.</p>
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="w-8 h-1 bg-indigo-500 mr-4"></span> About Me
+                </h2>
+                <p class="text-gray-400 leading-relaxed text-lg">
+                    I am a Data Science graduate student at the <span class="text-white">University of North Texas (GPA: 3.83/4.0)</span> with a passion for building autonomous systems. 
+                    My expertise lies in bridging the gap between theoretical deep learning and real-world deployment. 
+                    Currently, I am researching multi-layer web search systems and LLM-driven orchestration to create AI that doesn't just answer, but <span class="text-indigo-400 italic">acts</span>.
+                </p>
             </div>
-            <div class="experience-item">
-                <h3>Data Science Intern | NILTECH-EDU, Hyderabad, India</h3>
-                <p>Developed and optimized machine learning models through data preprocessing, exploratory data analysis (EDA), and feature engineering. Collaborated on cross-functional teams to interpret findings and communicated insights using data visualization tools.</p>
+            <div data-aos="fade-left" class="glass p-8 rounded-3xl border-indigo-500/20">
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-indigo-400 font-bold text-2xl">3.83</h4>
+                        <p class="text-sm text-gray-500">Graduate GPA</p>
+                    </div>
+                    <div>
+                        <h4 class="text-indigo-400 font-bold text-2xl">4+</h4>
+                        <p class="text-sm text-gray-500">Major AI Projects</p>
+                    </div>
+                    <div>
+                        <h4 class="text-indigo-400 font-bold text-2xl">UNT</h4>
+                        <p class="text-sm text-gray-500">Research & Teaching</p>
+                    </div>
+                    <div>
+                        <h4 class="text-indigo-400 font-bold text-2xl">Azure</h4>
+                        <p class="text-sm text-gray-500">Certified Cloud</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2 class="section-title">Skills</h2>
-        <ul>
-            <li>Programming: Python, SQL, PHP, JavaScript, HTML/CSS</li>
-            <li>Frameworks & Tools: TensorFlow, Scikit-learn, Hadoop, Spark</li>
-            <li>Data Analysis: Pandas, NumPy, Matplotlib, Seaborn</li>
-            <li>Cloud: Microsoft Azure</li>
-        </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 px-6 bg-white/5">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Professional Experience</h2>
+            
+            <div class="space-y-12">
+                <!-- Exp 1 -->
+                <div class="glass p-8 rounded-2xl relative" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Research Assistant — Multi-Layer Web Search & Agentic AI</h3>
+                        <span class="text-indigo-400 font-medium">Jan 2025 — Present</span>
+                    </div>
+                    <p class="text-gray-300 mb-2 font-medium">University of North Texas</p>
+                    <ul class="text-gray-400 list-disc ml-5 space-y-2">
+                        <li>Implemented a multi-layer web search system combining surface and deep web indexing.</li>
+                        <li>Developed an agentic LLM pipeline to autonomously orchestrate queries and synthesize outputs.</li>
+                        <li>Optimized routing logic to reduce retrieval latency for non-indexed content.</li>
+                    </ul>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="glass p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Teaching Assistant — Enterprise Database Lab</h3>
+                        <span class="text-indigo-400 font-medium">Aug 2025 — Present</span>
+                    </div>
+                    <p class="text-gray-300 mb-2 font-medium">University of North Texas</p>
+                    <ul class="text-gray-400 list-disc ml-5 space-y-2">
+                        <li>Instruction on Primavera P6, EPS, and OBS for complex project portfolios.</li>
+                        <li>Managing structured project data within Oracle database environments.</li>
+                        <li>Leading lab sessions on baseline vs. actual performance comparisons.</li>
+                    </ul>
+                </div>
+
+                <!-- Exp 3 -->
+                <div class="glass p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-white">Data Science Intern</h3>
+                        <span class="text-indigo-400 font-medium">Aug 2023 — Dec 2023</span>
+                    </div>
+                    <p class="text-gray-300 mb-2 font-medium">Niltech-Edu</p>
+                    <ul class="text-gray-400 list-disc ml-5 space-y-2">
+                        <li>Optimized ML classification models using Scikit-learn and TensorFlow, improving efficiency by 15%.</li>
+                        <li>Developed Tableau dashboards that improved business decision-making speed by 20%.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <p>Email: <a href="mailto:RahulPogula@my.unt.edu">RahulPogula@my.unt.edu</a></p>
-        <p>Phone: +1 9405953243</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rahul-pogula-b9b558246">linkedin.com/in/rahul-pogula-b9b558246</a></p>
-        <button onclick="window.location.href='mailto:RahulPogula@my.unt.edu'">Contact Me</button>
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Featured AI Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- Project 1 -->
+            <div class="glass p-6 rounded-3xl group hover:border-indigo-500 transition duration-500" data-aos="fade-up">
+                <div class="h-48 bg-gradient-to-br from-indigo-900 to-black rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fa-solid fa-face-smile-beam text-6xl text-indigo-500 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Deepfake Detection System</h3>
+                <p class="text-gray-400 text-sm mb-4">Fine-tuned ResNet-18 with Grad-CAM to highlight suspicious facial regions for forensic integrity verdicts.</p>
+                <div class="flex gap-2">
+                    <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded border border-indigo-500/30">PyTorch</span>
+                    <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded border border-indigo-500/30">ResNet-18</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass p-6 rounded-3xl group hover:border-indigo-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-48 bg-gradient-to-br from-purple-900 to-black rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fa-solid fa-shield-halved text-6xl text-purple-500 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Real-Time Fraud Detection</h3>
+                <p class="text-gray-400 text-sm mb-4">Spark-based pipeline integrating XGBoost and Isolation Forest to classify fraudulent transactions at scale.</p>
+                <div class="flex gap-2">
+                    <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-1 rounded border border-purple-500/30">Apache Spark</span>
+                    <span class="text-[10px] bg-purple-500/20 text-purple-300 px-2 py-1 rounded border border-purple-500/30">XGBoost</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="glass p-6 rounded-3xl group hover:border-indigo-500 transition duration-500" data-aos="fade-up">
+                <div class="h-48 bg-gradient-to-br from-blue-900 to-black rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fa-solid fa-pills text-6xl text-blue-500 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">AI Medication Adherence</h3>
+                <p class="text-gray-400 text-sm mb-4">Multimodal system using CNN-based image recognition and LLM-powered NLP to track patient feedback.</p>
+                <div class="flex gap-2">
+                    <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-1 rounded border border-blue-500/30">FastAPI</span>
+                    <span class="text-[10px] bg-blue-500/20 text-blue-300 px-2 py-1 rounded border border-blue-500/30">CNN</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="glass p-6 rounded-3xl group hover:border-indigo-500 transition duration-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-48 bg-gradient-to-br from-green-900 to-black rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fa-solid fa-leaf text-6xl text-green-500 group-hover:scale-110 transition duration-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Crop Health Monitoring</h3>
+                <p class="text-gray-400 text-sm mb-4">Analyzing Sentinel-2 satellite imagery using DTW K-Means and XGBoost to predict vegetation stress.</p>
+                <div class="flex gap-2">
+                    <span class="text-[10px] bg-green-500/20 text-green-300 px-2 py-1 rounded border border-green-500/30">Remote Sensing</span>
+                    <span class="text-[10px] bg-green-500/20 text-green-300 px-2 py-1 rounded border border-green-500/30">XGBoost</span>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Rahul Pogula. All Rights Reserved.</p>
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6 bg-white/5">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-16" data-aos="fade-up">Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl" data-aos="zoom-in">
+                    <i class="fa-solid fa-brain text-indigo-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">ML & AI</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">PyTorch, TensorFlow, Scikit-Learn, LLMs, Agentic AI, Computer Vision, NLP</p>
+                </div>
+                <div class="glass p-8 rounded-3xl" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-solid fa-database text-purple-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Data Engineering</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">SQL, PostgreSQL, Oracle, Apache Spark, Hadoop, ETL Pipelines</p>
+                </div>
+                <div class="glass p-8 rounded-3xl" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-cloud text-blue-500 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-4">Cloud & MLOps</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">AWS (S3, SageMaker), Azure, Docker, MLflow, FastAPI, GitHub Actions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center border-t border-white/10">
+        <p class="text-gray-500 text-sm">© 2026 Rahul Pogula. Built with AI & Precision.</p>
+        <div class="flex justify-center space-x-6 mt-4 text-gray-400">
+            <a href="mailto:rahul.pogula2002@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/yourprofile" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+        </div>
     </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out',
+        });
+    </script>
 </body>
 </html>
